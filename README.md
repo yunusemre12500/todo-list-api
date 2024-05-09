@@ -17,8 +17,10 @@ This API created for practice.
 
 ## TODO List
 - [x] Implement API Versioning
+- [x] Database Connection
 - [x] Add Dockerfile
 - [x] Add docker-compose.yaml
+- [ ] Support configuration using .yaml files
 - [ ] Add Support for User Specific Todo Lists
 - [ ] Add Support for Support User Specific TODO Lists
 - [ ] Implement Authentication
