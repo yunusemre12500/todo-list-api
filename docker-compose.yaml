@@ -1,0 +1,24 @@
+services:
+  mongo-db:
+    container_name: mongo-db
+    cpu_count: 1
+    image: mongo:7.0
+    init: false
+    mem_limit: 128mb
+    mem_reservation: 0
+    mem_swappiness: 0
+    memswap_limit: 0
+    network_mode: host
+    pull_policy: if_not_present
+    restart: unless-stopped
+  todo-app-api:
+    container_name: todo-app-api
+    cpu_count: 1
+    image: yunusemrealtiner/todo-app-api:1.0.0
+    init: false
+    mem_limit: 64mb
+    mem_reservation: 0
+    mem_swappiness: 0
+    memswap_limit: 0
+    network_mode: host
+    restart: unless-stopped
