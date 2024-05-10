@@ -7,10 +7,10 @@ This API created for practice.
   Run <code>docker compose up -d</code>
 </details>
 <details>
-  <summary>Without Docker</summary>
+  <summary>Without Using Docker</summary>
   <ol>
     <li>Run <code>make build</code> to build the source code.</li>
-    <li>Run <code>make install</code> to move compiler binary to <code>/usr/local/bin</code>.</li>
+    <li>Run <code>make install</code> to move compiled binary to <code>/usr/local/bin</code> directory.</li>
     <li>Execute binary <code>/usr/local/bin/todo-app-api</code>.</li>
   </ol>
 </details>
