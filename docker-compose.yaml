@@ -11,10 +11,22 @@ services:
     network_mode: host
     pull_policy: if_not_present
     restart: unless-stopped
+  redis:
+    container_name: redis
+    cpu_count: 1
+    image: redis:7.2.4-alpine3.19
+    init: false
+    mem_limit: 256mb
+    mem_reservation: 0
+    mem_swappiness: 0
+    memswap_limit: 0
+    network_mode: host
+    pull_policy: if_not_present
+    restart: unless-stopped
   todo-app-api:
+    build: .
     container_name: todo-app-api
     cpu_count: 1
-    image: yunusemrealtiner/todo-app-api:1.0.0
     init: false
     mem_limit: 64mb
     mem_reservation: 0
