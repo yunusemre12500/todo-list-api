@@ -25,7 +25,7 @@ This API created for practice.
 - [ ] Implement Authentication
 - [ ] Implement Request Validation
 - [ ] Implement Caching using Redis
-- [ ] Implement Rate Limiting
+- [x] Implement Rate Limiting
 
 ## License
 The [MIT](https://github.com/yunusemrealtiner1/todo-app/blob/main/LICENSE) License
