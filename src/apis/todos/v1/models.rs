@@ -10,6 +10,8 @@ pub struct Todo {
 }
 
 impl Todo {
+    pub const COLLECTION_NAME: &'static str = "todos";
+
     pub fn from_create_todo_request_body(body: CreateTodoRequestBody) -> Self {
         Self {
             created_at: chrono::Utc::now().to_rfc3339_opts(chrono::SecondsFormat::Millis, true),

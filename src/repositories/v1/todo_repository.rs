@@ -10,7 +10,7 @@ pub struct TodoRepository {
 impl TodoRepository {
     pub fn new(database: Database) -> Self {
         Self {
-            collection: database.collection("todos"),
+            collection: database.collection(Todo::COLLECTION_NAME),
         }
     }
 
@@ -23,10 +23,9 @@ impl TodoRepository {
     }
 
     pub async fn delete_by_id(&self, id: uuid::Uuid) -> Result<Option<()>> {
-        let result = self
-            .collection
-            .delete_one(doc! { "_id": id.simple().to_string()}, None)
-            .await?;
+        let query = doc! { "_id": id.as_simple().to_string() };
+
+        let result = self.collection.delete_one(query, None).await?;
 
         if result.deleted_count == 1 {
             return Ok(Some(()));
@@ -36,14 +35,14 @@ impl TodoRepository {
     }
 
     pub async fn get_by_id(&self, id: uuid::Uuid) -> Result<Option<Todo>> {
-        let query = doc! { "_id": id.simple().to_string() };
+        let query = doc! { "_id": id.as_simple().to_string() };
 
         self.collection.find_one(query, None).await
     }
 
-    pub async fn list(&self, limit: u64, page: u64) -> Result<Vec<Todo>> {
+    pub async fn list(&self, limit: u64, offset: u64) -> Result<Vec<Todo>> {
         let options = FindOptions::builder()
-            .skip(limit * page)
+            .skip(limit * offset)
             .limit(limit as i64)
             .build();
 
