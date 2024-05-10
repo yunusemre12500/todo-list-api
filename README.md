@@ -22,7 +22,6 @@ This API created for practice.
 - [x] Add docker-compose.yaml
 - [ ] Support configuration using .yaml files
 - [ ] Add Support for User Specific Todo Lists
-- [ ] Add Support for Support User Specific TODO Lists
 - [ ] Implement Authentication
 - [ ] Implement Request Validation
 - [ ] Implement Caching using Redis
