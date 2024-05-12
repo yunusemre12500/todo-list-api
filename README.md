@@ -28,4 +28,4 @@ This API created for practice.
 - [x] Implement Rate Limiting
 
 ## License
-The [MIT](https://github.com/yunusemre12500/todo-app/blob/main/LICENSE) License
+The [MIT](https://github.com/yunusemre12500/todo-list-api/blob/main/LICENSE) License
